@@ -52,7 +52,7 @@ COPY ./entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 RUN EDITOR='code --w' bin/rails credentials:edit
 # RUN bundle exec rails assets:precompile
-RUN RAILS_ENV=production bundle exec rake db:create db:schema:load
+#RUN RAILS_ENV=production bundle exec rake db:create db:schema:load
 RUN cat log/production.log
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 EXPOSE 80
