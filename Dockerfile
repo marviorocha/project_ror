@@ -1,5 +1,5 @@
 FROM library/ruby:3.1.0-alpine
-FROM postgres:alpine3.17
+
 RUN apk --update add make g++
 RUN apk update && apk add git
 
