@@ -50,7 +50,7 @@ ENV RAILS_LOG_TO_STDOUT="1" \
 
 COPY ./entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
-RUN EDITOR='code --w' bin/rails credentials:edit
+#RUN EDITOR='code --w' bin/rails credentials:edit
 # RUN bundle exec rails assets:precompile
 RUN RAILS_ENV=production bundle exec rake db:create db:schema:load
 RUN cat log/production.log
