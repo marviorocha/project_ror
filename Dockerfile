@@ -7,8 +7,8 @@ ARG RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
 ENV RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
 ARG DATABASE_URL=${DATABASE_URL}
 ENV DATABASE_URL=${DATABASE_URL}
-ARG secret_key_base=${secret_key_base}
-ENV secret_key_base=${secret_key_base}
+ARG RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
+ENV RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
 
 RUN apk add --update --no-cache \
   binutils-gold \
