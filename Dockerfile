@@ -33,7 +33,7 @@ RUN apk add --update --no-cache \
   openssl \
   bash \
   pkgconfig \
-  postgresql-client \
+  postgresql-dev \
   tzdata \
   yarn \
   imagemagick \
