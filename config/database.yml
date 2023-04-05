@@ -17,4 +17,6 @@ test:
 production:
   <<: *default
   database: project_ror_production
-  url: <%= ENV['DATABASE_URL'] %>
+  host: srv-captain--postgres14
+  username: postgres
+  password: 102030
