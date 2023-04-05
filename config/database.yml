@@ -17,5 +17,4 @@ test:
 production:
   <<: *default
   database: project_ror_production
-  username: postgres
-  password: 102030
+  url: <%= ENV['DATABASE_URL']]%>
