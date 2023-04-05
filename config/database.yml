@@ -17,6 +17,6 @@ test:
 production:
   <<: *default
   database: project_ror_production
-  host: 'srv-captain\-\-postgres14'
+  host: 'srv-captain--postgres14'
   username: postgres
   password: 102030
