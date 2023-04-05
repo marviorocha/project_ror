@@ -10,34 +10,9 @@ ENV DATABASE_URL=${DATABASE_URL}
 ARG SECRET_KEY_BASE=${SECRET_KEY_BASE}
 ENV SECRET_KEY_BASE=${SECRET_KEY_BASE}
 
-RUN apk add --update --no-cache \
-  binutils-gold \
-  build-base \
-  curl \
-  file \
-  g++ \
-  gcc \
-  git \
-  less \
-  libstdc++ \
-  libffi-dev \
-  libc-dev \
-  linux-headers \
-  libxml2-dev \
-  libxslt-dev \
-  libgcrypt-dev \
-  make \
-  netcat-openbsd \
-  nodejs \
-  openssl \
-  pkgconfig \
-  postgresql-client \
-  tzdata \
-  yarn \
-  imagemagick \
-  graphicsmagick-dev \
-  ruby-dev \
-  musl-dev
+RUN apk update && apk upgrade && \
+  apk add --no-cache make g++ git postgresql-dev
+
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY ./Gemfile /usr/src/app/
