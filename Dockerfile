@@ -40,6 +40,10 @@ WORKDIR /usr/src/app
 COPY ./Gemfile /usr/src/app/
 RUN bundle install
 COPY ./ /usr/src/app
+
+ARG DATABASE_URL=${DATABASE_URL} \
+    SECRET_KEY_BASE=${SECRET_KEY_BASE}
+
 ENV RAILS_LOG_TO_STDOUT="1" \
     RAILS_SERVE_STATIC_FILES="true" \
     RAILS_ENV="production" \
