@@ -58,6 +58,6 @@ RUN bundle exec rails assets:precompile
 #RUN RAILS_ENV=production bundle exec rake db:create db:schema:load
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
-EXPOSE 80
+EXPOSE 3000
 WORKDIR /usr/src/app
-CMD ["rackup", "config.ru", "--host", "0.0.0.0", "--port", "80"]"
+CMD ["rackup", "config.ru", "--host", "0.0.0.0", "--port", "3000"]"
