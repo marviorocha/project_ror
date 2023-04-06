@@ -15,4 +15,4 @@ test:
 production:
   <<: *default
   database: project_ror_production
-  url: 'postgres://postgres:6932f85a3e5f8966f185@showbiz_db:5432/project_ror_production'
+  url: <%= ENV["DATABASE_URL"] %>

@@ -57,6 +57,6 @@ RUN chmod +x /usr/bin/entrypoint.sh
 RUN bundle exec rails assets:precompile
 
 ENTRYPOINT ["entrypoint.sh"]
-EXPOSE 3000
+EXPOSE 80
 WORKDIR /usr/src/app
-CMD ["rackup", "config.ru", "--host", "0.0.0.0", "--port", "3000"]"
+CMD ["rackup", "config.ru", "--host", "0.0.0.0", "--port", "80"]"
