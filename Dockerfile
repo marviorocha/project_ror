@@ -55,7 +55,6 @@ RUN chmod +x /usr/bin/entrypoint.sh
 
 
 RUN bundle exec rails assets:precompile
-RUN RAILS_ENV=production bundle exec rake db:create db:schema:load
 
 ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
