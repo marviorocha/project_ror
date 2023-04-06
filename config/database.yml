@@ -17,4 +17,7 @@ test:
 production:
   <<: *default
   database: project_ror_production
-  url: <%= ENV['DATABASE_URL'] %>
+  host: showbiz_project_db
+  port: 5432
+  username: postgres
+  password: 12345678

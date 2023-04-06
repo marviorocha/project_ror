@@ -50,7 +50,7 @@ ENV RAILS_LOG_TO_STDOUT="1" \
     RAILS_ENV="production" \
     BUNDLE_WITHOUT="development"
 
-COPY ./entrypoint.sh /usr/bin/
+COPY ./bin/entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 
 RUN bundle exec rails db:create db:migrate
