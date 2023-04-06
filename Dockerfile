@@ -42,7 +42,7 @@ ENV RAILS_LOG_TO_STDOUT="1" \
 # Install application gems
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
-RUN ./bin/rails db:create
+
 # Copy application code
 COPY . .
 
@@ -50,7 +50,7 @@ COPY . .
 RUN bundle exec bootsnap precompile --gemfile app/ lib/
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-RUN SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile
+RUN SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile db:create
 
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
