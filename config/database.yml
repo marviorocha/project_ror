@@ -18,4 +18,4 @@ test:
 production:
   <<: *default
   database: project_ror_production
-  url: postgres://postgres:4&39tBx9Q3vT@showbiz_project-db:5432/project_ror_production?sslmode=disable
+  url: <%= ENV["DATABASE_URL"] %>
