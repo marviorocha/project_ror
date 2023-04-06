@@ -3,12 +3,7 @@ FROM library/ruby:3.1.0-alpine
 RUN apk --update add make g++
 RUN apk update && apk add git
 
-ARG RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
-ENV RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
-ARG SECRET_KEY_BASE=${SECRET_KEY_BASE}
-ENV SECRET_KEY_BASE=${SECRET_KEY_BASE}
-ARG DATABASE_URL=${DATABASE_URL}
-ENV DATABASE_URL=${DATABASE_URL}
+
 
 RUN apk add --update --no-cache \
   binutils-gold \
@@ -48,7 +43,9 @@ COPY ./ /usr/src/app
 ENV RAILS_LOG_TO_STDOUT="1" \
     RAILS_SERVE_STATIC_FILES="true" \
     RAILS_ENV="production" \
-    BUNDLE_WITHOUT="development"
+    BUNDLE_WITHOUT="development" \
+    DATABASE_URL=${DATABASE_URL} \
+    SECRET_KEY_BASE=${SECRET_KEY_BASE}
 
 COPY ./entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
