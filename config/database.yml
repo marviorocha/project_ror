@@ -1,7 +1,7 @@
 
 default: &default
   adapter: postgresql
-  encoding: UTF-8
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: showbiz_project-db
   port: 5432
