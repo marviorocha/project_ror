@@ -50,14 +50,14 @@ ENV RAILS_LOG_TO_STDOUT="1" \
     RAILS_ENV="production" \
     BUNDLE_WITHOUT="development"
 
-COPY ./bin/entrypoint.sh /usr/bin/
+COPY ./entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 
 
 RUN bundle exec rails assets:precompile
 #RUN RAILS_ENV=production bundle exec rake db:create db:schema:load
 
-ENTRYPOINT ["/usr/bin/entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
 WORKDIR /usr/src/app
 CMD ["rackup", "config.ru", "--host", "0.0.0.0", "--port", "3000"]"
