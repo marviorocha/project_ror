@@ -42,7 +42,7 @@ ENV RAILS_LOG_TO_STDOUT="1" \
 # Install application gems
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
-
+RUN ./bin/rails db:create
 # Copy application code
 COPY . .
 
